@@ -1,0 +1,23 @@
+EDIT FORM
+
+<form method='post' action='<%= planet_path(@planet.id) %>'>
+  What is the planet name?
+  <input type='text' name='planet[name]' value='<%= @planet.name %>' autofocus>
+  <br>
+  Image url:
+  <input type='text' name='planet[image]' value='<%= @planet.image %>'>
+  <br>
+  What is the orbit?
+  <input type='float' name='planet[orbit]' value='<%= @planet.orbit %>'>
+  <br>
+  What is the diameter?
+  <input type='float' name='planet[diameter]' value='<%= @planet.diameter %>'>
+  <br>
+  What is the mass?
+  <input type='float' name='planet[mass]' value='<%= @planet.mass %>'>
+  <br>
+  How many moons?
+  <input type='text' name='planet[moons]' value='<%= @planet.moons %>'>
+
+  <button>Edit Planet</button>
+</form>

@@ -1,0 +1,11 @@
+<p><%= truncate(@story, :length => 30) %></p>
+<br>
+
+<p>I ate <%= pluralize(@person_count1, 'fish') %>.</p>
+<p>I ate <%= pluralize(@person_count2, 'fish') %>.</p>
+
+<ul>
+  <% @numbers.each do |num| %>
+    <li style='background-color:<%= cycle('#ccc', '#555') %>;'><%= num %></li>
+  <% end %>
+</ul>

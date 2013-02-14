@@ -1,0 +1,31 @@
+<div id='profile'>
+  <div class='image_box'>
+    <%= image_tag(@artist.image) %>
+  </div>
+  <h1 class='big'>
+    <%= @artist.name %>
+  </h1>
+  <p>
+    <%= @artist.name %> is a <%= @artist.nationality %> artist. He was born on <%= @artist.dob %>. He was a part of the <%= @artist.period %> movement.
+  </p>
+  <%= link_to 'Delete', @artist, :method => :delete, :confirm => 'Are you sure?' %>
+  <%= link_to 'Edit', edit_artist_path(@artist) %>
+  <br>
+
+  <% @artist.paintings.each do |painting| %>
+    <div id='profile'>
+      <div class='image_box'>
+        <%= image_tag(painting.image) %>
+      </div>
+      <h1 class='big'>
+        <%= painting.title %>
+      </h1>
+      <p>Created: <%= painting.year %></p>
+      <p><%= painting.medium %></p>
+      <p><%= painting.style %>.</p>
+      <br>
+    </div>
+  <% end %>
+
+
+</div>

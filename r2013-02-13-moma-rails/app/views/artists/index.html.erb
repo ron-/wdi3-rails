@@ -1,0 +1,14 @@
+<% @artists.each do |artist| %>
+
+  <section class='artist_box'>
+    <h1><%= link_to artist.name, artist_path(artist.id) %></h1>
+    <ul>
+      <li><%= artist.nationality %></li>
+      <li><%= artist.dob %></li>
+      <li><%= artist.period %></li>
+    </ul>
+    <br>
+    <%= image_tag(artist.image) %>
+  </section>
+
+<% end %>

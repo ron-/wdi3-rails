@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>R20130212ViewHelpers</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/numbers">numbers</a></li>
+    <li><a href="/text">text</a></li>
+    <li><a href="/assets">assets</a></li>
+    <li><a href="/url">url</a></li>
+  </ul>
+</nav>
+<%= yield %>
+
+</body>
+</html>

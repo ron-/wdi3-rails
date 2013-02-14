@@ -1,0 +1,11 @@
+<% @planets.each do |planet| %>
+  <section>
+
+      <%= link_to(planet.name, planet_path(planet.id)) %> has an orbit of <%= planet.orbit %> and has <%= pluralize(planet.moons, 'moon') %>
+      <br>
+      <%= button_to('destroy planet!', planet_delete_path(planet.id)) %>
+      <%= link_to 'edit planet!', planet_edit_path(planet.id) %>
+      <br>
+
+  </section>
+<% end %>

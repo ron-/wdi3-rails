@@ -1,0 +1,14 @@
+<% @paintings.each do |painting| %>
+
+  <section class='artist_box'>
+    <h1><%= link_to painting.title, painting_path(painting.id) %></h1>
+    <ul>
+      <li><%= painting.year %></li>
+      <li><%= painting.medium %></li>
+      <li><%= painting.style %></li>
+    </ul>
+    <br>
+    <%= image_tag(painting.image) %>
+  </section>
+
+<% end %>
