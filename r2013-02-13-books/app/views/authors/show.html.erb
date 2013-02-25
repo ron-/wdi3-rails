@@ -1,0 +1,20 @@
+<%= image_tag(@author.image) %>
+<br>
+<p><%= @author.name %></p>
+<p><%= @author.dob %></p>
+<p><%= @author.birthplace %></p>
+<p><%= @author.nationality %></p>
+
+<% @author.books.each do |book| %>
+<br>
+<%= image_tag(book.image) %>
+<br>
+<p><%= book.title %></p>
+<p><%= book.pubdate %></p>
+<p><%= book.publisher %></p>
+<p><%= book.pages %></p>
+<% end %>
+
+
+<p><%= link_to 'delete', @author, :method => :delete, :confirm => 'Are you sure?' %></p>
+<p><%= link_to 'edit', edit_author_path(@author) %></p>

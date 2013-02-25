@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td><%= @artist.name %></td>
+    <td><%= image_tag @artist.image %></td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan='2'><h5>Artist Albums</h5></th>
+    </tr>
+  </thead>
+    <% @artist.albums.order(:name).each do |album| %>
+    <tr>
+      <td><%= link_to(album.name, album_path(album)) %></td>
+      <td><%= image_tag album.image %></td>
+    </tr>
+    <% end %>
+</table>
+
+

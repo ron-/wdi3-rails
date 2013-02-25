@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+html {
+  font-family: 'Lato';
+  background:#ffffff url('pattern.jpg') repeat;
+}
+
+
+img {
+  width: 400px;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px 0 10px 35px;
+}
+
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 400px;
+  background-color: #FFF;
+}
+
+.single_menu{
+  width: 200px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+div.ingredient{
+  width: 300px;
+  border: 1px dashed black;
+}
+.ing_img {
+  width: 4000px;
+}
+
+#ingredientbox {
+  width: 450px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border:1px solid black;
+  background-color: #fff;
+}
+div#ingredientbox h1{
+  font-size: 1.6em;
+  margin-bottom: .2em;
+}
+
+#bookbox {
+  width: 450px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border:1px solid black;
+  background-color: #fff;
+}
+
+div#bookbox h1{
+  font-size: 2em;
+  margin-bottom: .2em;
+}
+
+div#bookbox img {
+  width: 450px;
+}
+
+div#bookbox p {
+  font-size: 1.2em;
+  margin-bottom: .4em;
+}

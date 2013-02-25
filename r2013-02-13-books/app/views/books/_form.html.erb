@@ -1,0 +1,21 @@
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <%= f.label :pubdate %>
+  <%= f.text_field :pubdate %>
+  <br>
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher %>
+  <br>
+  <%= f.label :pages %>
+  <%= f.text_field :pages %>
+  <br>
+  <%= f.label :author_id %>
+  <%= f.select :author_id, Author.all.map{|author| [author.name, author.id]} %>
+  <br>
+  <%= f.submit %>
+<% end %>

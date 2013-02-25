@@ -1,0 +1,39 @@
+<nav class='single_menu'><%= link_to '+ Add New Book', new_book_path %></nav>
+
+<div id='bookbox'>
+  <h1><%= link_to @book.title, @book %></h1>
+  <p><%= @book.chef %></p>
+  <p><%= @book.cuisine %></p>
+  <%= image_tag(@book.image) %>
+  <br>
+  <p><%= link_to 'delete', @book, :method => :delete, :confirm => 'Are you sure?' %></p>
+  <p><%= link_to 'edit', edit_book_path(@book) %>
+
+
+
+</div>
+
+<br>
+
+<% @book.recipes.each do |recipe| %>
+
+<div id='bookbox'>
+  <h1>Featured Recipe</h1>
+  <p><%= recipe.name %></p>
+  <%= image_tag(recipe.image) %>
+
+  <br>
+</div>
+<div id='ingredientbox'>
+  <h1>Main Ingredients</h1>
+  <% recipe.ingredients.each do |ingredient| %>
+    <div class='ing_img'>
+    <%= image_tag(ingredient.image) %>
+    </div>
+    <p><%= ingredient.name %></p>
+
+  <% end %>
+</div>
+
+
+<% end %>

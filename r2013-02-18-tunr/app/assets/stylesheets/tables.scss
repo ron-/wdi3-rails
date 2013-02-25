@@ -1,0 +1,25 @@
+@import 'colors';
+
+table
+
+{
+
+  .row1 td {
+    color: $td_dark;
+    background-color: $td_light;
+  }
+
+  .row2 td {
+    color: $td_light;
+    background-color: $td_dark;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  td {
+
+  }
+}

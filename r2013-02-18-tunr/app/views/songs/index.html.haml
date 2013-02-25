@@ -1,0 +1,17 @@
+
+%table
+  - @songs.each do |song|
+    %tr{:class => cycle('row0', 'row1')}
+      %td= link_to(song.name, song_path(song))
+
+      - if @auth && @auth.balance.to_d > song.price.to_d && !is_admin
+        %td= button_to('BUY ' + number_to_currency(song.price), purchase_song_path(song), :method => :get, :class => 'button radius tiny')
+      - else
+        %td= button_to('BUY ' + number_to_currency(song.price), purchase_song_path(song), :method => :get, :disabled => true, :class => 'button radius tiny')
+
+      %td= link_to('Edit', edit_song_path(song), :class => 'button radius tiny') if is_admin
+
+%p.newlink= link_to('New Song', new_song_path, :class => 'button radius tiny') if is_admin
+
+
+

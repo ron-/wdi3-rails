@@ -1,0 +1,30 @@
+%h3= @song.name
+
+- if !@song.artist.nil?
+  %h5= "Performed by " + @song.artist.name
+
+%h1 AT LEAST THIS IS WORKING!
+
+
+= form_tag buy_song_path(@song) do
+  - @auth.mixtapes.each do |mixtape|
+    = mixtape.name
+    = check_box_tag 'user[mixtape_ids][]', mixtape.id, mixtape.in?(@song.mixtapes.to_a)
+
+  = submit_tag
+
+
+
+/ = form_tag buy_song_path(@song) do
+/   .row
+/     %fieldset
+/       %legend Add to a Mixtape!
+/       - if @auth.mixtapes.count == 1
+/         %p You have no mixtapes! Get it together!
+/       - else
+/         - @auth.mixtapes.each do |mixtape|
+/           - if mixtape.name != 'Library'
+/             %p{ :class => 'left skill_checkboxes' }
+/               = mixtape.name
+/               = check_box_tag 'user[mixtape_ids][]', mixtape.id
+/   = submit_tag

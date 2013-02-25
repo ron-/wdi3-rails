@@ -1,0 +1,23 @@
+<h2><%= @song.name %></h2>
+
+<% if !@song.album.nil? %>
+  <h5>From the album <%= @song.album.name %></h5>
+<% end %>
+
+<% if @auth && @auth.balance.to_d > @song.price.to_d && !is_admin %>
+  <%= button_to('BUY ' + number_to_currency(@song.price), purchase_song_path(@song), :method => :get) %>
+<% else %>
+  <%= button_to('BUY ' + number_to_currency(@song.price), purchase_song_path(@song), :method => :get, :disabled => true) %>
+<% end %>
+
+
+
+
+<p><%= audio_tag(@song.filename, :controls => true) %></p>
+<table>
+  <% @song.genres.each do |genre| %>
+  <tr>
+    <td><%= genre.name %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,8 @@
+<%= image_tag(@book.image) %>
+<br>
+<p><%= @book.title %></p>
+<p><%= @book.pubdate %></p>
+<p><%= @book.publisher %></p>
+<p><%= @book.pages %></p>
+<p><%= link_to 'delete', @book, :method => :delete, :confirm => 'Are you sure?' %></p>
+<p><%= link_to 'edit', edit_book_path(@book) %></p>

@@ -1,0 +1,18 @@
+<%= form_for @author do |f| %>
+    <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <%= f.label :dob %>
+  <%= f.text_field :dob %>
+  <br>
+  <%= f.label :birthplace %>
+  <%= f.text_field :birthplace %>
+  <br>
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+  <br>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,39 @@
+<div id='bookbox'>
+<h1>Edit Recipe:</h1>
+<br>
+<%= form_for @recipe do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :course %>
+  <%= f.text_field :course %>
+  <br>
+  <br>
+  <%= f.label :cooktime %>
+  <%= f.text_field :cooktime %>
+  <br>
+  <br>
+  <%= f.label :servingsize %>
+  <%= f.text_field :servingsize %>
+  <br>
+  <br>
+  <%= f.label :instructions %>
+  <%= f.text_field :instructions %>
+  <br>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <br>
+  <% Ingredient.order(:name).all.each do |ingredient| %>
+    <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, ingredient.in?(@recipe.ingredients.to_a) %>
+    <span><%= ingredient.name %></span>
+
+    <br>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>
+</div>

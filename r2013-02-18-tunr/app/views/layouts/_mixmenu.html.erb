@@ -1,0 +1,13 @@
+<li class="has-flyout">
+
+  <a href="#">Mixtapes</a>
+  <a href="#" class="flyout-toggle"><span> </span></a>
+
+  <ul class="flyout">
+    <% @auth.mixtapes.each do |mixtape| %>
+      <li><%= link_to(mixtape.name, mixtape) %></li>
+    <% end %>
+    <li><%= link_to('Create New', new_mixtape_path) %></li>
+  </ul>
+
+</li>

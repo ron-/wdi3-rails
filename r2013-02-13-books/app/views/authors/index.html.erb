@@ -1,0 +1,11 @@
+<% @authors.each do |author| %>
+  <div class='bigimg'>
+    <%= image_tag(author.image) %>
+  </div>
+  <h1><%= link_to author.name, author_path(author.id) %></h1>
+  <ul>
+    <li><%= author.dob %></li>
+    <li><%= author.birthplace %></li>
+    <li><%= author.nationality %></li>
+  </ul>
+<% end %>

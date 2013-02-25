@@ -1,0 +1,12 @@
+<ol>
+  <li>
+    <% @books.each do |book| %>
+      <div id='bookbox'>
+        <h1><%= link_to book.title, book %></h1>
+        <p><%= book.chef %></p>
+        <p><%= book.cuisine %></p>
+        <%= image_tag(book.image) %>
+      </div>
+    <% end %>
+  </li>
+</ol>

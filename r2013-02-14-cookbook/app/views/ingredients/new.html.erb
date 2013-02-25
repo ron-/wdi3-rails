@@ -1,0 +1,32 @@
+<div id='bookbox'>
+<h1>Add Ingredient:</h1>
+<br>
+<%= form_for @ingredient do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :measurement %>
+  <%= f.text_field :measurement %>
+  <br>
+  <br>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <br>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <br>
+  <% Recipe.order(:name).all.each do |recipe| %>
+    <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes.to_a) %>
+    <span><%= recipe.name %></span>
+
+    <br>
+  <% end %>
+
+  <br>
+  <%= f.submit %>
+<% end %>
+</div>

@@ -1,0 +1,10 @@
+
+    <% @ingredients.each do |ingredient| %>
+      <div id='bookbox'>
+        <%= image_tag(ingredient.image) %>
+        <h1><%= link_to ingredient.name, ingredient %></h1>
+        <p><%= ingredient.measurement %></p>
+        <p><%= ingredient.cost %></p>
+
+      </div>
+    <% end %>

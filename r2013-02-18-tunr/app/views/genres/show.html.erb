@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <td><% genre = @genre.name %></td>
+    <td><%= genre %></td>
+  </tr>
+</table>
+
+<table>
+  <% @genre.songs.order(:name).each do |song| %>
+    <tr>
+      <td><%= link_to(song.name, song_path(song)) %></td>
+      <td><%= image_tag(song.image) %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+

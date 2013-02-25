@@ -1,0 +1,21 @@
+@import 'colors';
+
+#users
+{
+  img
+  {
+    width: 100px;
+    height: 100px;
+  }
+  td
+  {
+    background-color: $cell_color;
+  }
+}
+
+h1, h2, h3, h4 {
+  color: #666666;
+}
+body{
+  background-color: #EEE;
+}

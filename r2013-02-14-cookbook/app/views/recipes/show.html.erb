@@ -1,0 +1,23 @@
+<nav class='single_menu'><%= link_to '+ Add New Recipe', new_recipe_path %></nav>
+
+<div id='bookbox'>
+  <%= image_tag(@recipe.image) %>
+  <h1><%= link_to @recipe.name, @recipe %></h1>
+  <p><%= @recipe.course %></p>
+  <p><%= @recipe.cooktime %></p>
+  <p><%= @recipe.servingsize %></p>
+  <p><%= @recipe.instructions %></p>
+  <p><%= link_to 'delete', @recipe, :method => :delete, :confirm => 'Are you sure?' %></p>
+  <p><%= link_to 'edit', edit_recipe_path(@recipe) %>
+</div>
+</div>
+<div id='ingredientbox'>
+  <h1>Main Ingredients</h1>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <div class='ing_img'>
+    <%= image_tag(ingredient.image) %>
+    </div>
+    <p><%= ingredient.name %></p>
+
+  <% end %>
+</div>
