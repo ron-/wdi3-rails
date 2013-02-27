@@ -1,0 +1,15 @@
+#container
+  #header
+    %h1 > underscore & timers
+
+  #body
+
+    = text_field_tag 'number', nil, :autofocus => true
+    = submit_tag 'add number', :id => 'add_number'
+    = submit_tag 'square number', :id => 'square_number'
+    = submit_tag 'function', :id => 'fn'
+    = submit_tag 'start', :id => 'start'
+    = submit_tag 'stop', :id => 'stop'
+
+    #numbers
+      .clear

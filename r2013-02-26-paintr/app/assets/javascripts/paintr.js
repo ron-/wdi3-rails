@@ -21,11 +21,11 @@ function paint_color(){
 
 function create_paint_boxes()
 {
-  for(i=0; i < 5005; i++)
+  for(i=0; i < 5016; i++)
   {
     var paint = $('<div>');
     paint.addClass('paint');
-    $('#canvas').append(paint);
+    $('#canvas').prepend(paint);
   }
 }
 
@@ -39,7 +39,7 @@ function set_color(){
 function set_canvas_background(){
   var photo = $(this).children().first();
   var url = photo.attr('src');
-  $('#canvas').css('background', "url('" + url + "')", 'no-repeat');
+  $('#canvas').css('background', "url(" + url + ")");
 }
 
 

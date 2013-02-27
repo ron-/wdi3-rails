@@ -1,0 +1,39 @@
+h1
+{
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+}
+
+.numbox {
+  min-width: 30px;
+  height: 30px;
+  background-color: #DDD;
+  float: left;
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.6em;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+#numbers{
+  background-color: #EEE;
+  margin-top: 30px;
+}
+
+.clear{
+  clear:both;
+}
+
+#container
+{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orange{
+  color: orange;
+}
