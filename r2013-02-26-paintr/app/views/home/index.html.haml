@@ -1,0 +1,27 @@
+#left
+  %h1 Paintr
+
+  %h4 my color palette:
+  #selected.color_box
+  .entry
+  = text_field_tag 'color', nil, :autofocus => true
+  = submit_tag 'add color', :id => 'add_color'
+  = submit_tag 'clear', :id => 'clear_colors'
+
+  #palette
+
+  %h4 my photos:
+  .entry
+  = text_field_tag 'photo'
+  = submit_tag 'add photo', :id => 'add_photo'
+  = submit_tag 'clear', :id => 'clear_photos'
+
+
+  #album
+  .clear
+
+#right
+  #canvas
+
+
+

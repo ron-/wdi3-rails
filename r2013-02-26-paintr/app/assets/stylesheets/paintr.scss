@@ -1,0 +1,74 @@
+h1, h4
+{
+  font-family: 'Futura';
+  letter-spacing: 8px;
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 4px solid #333;
+}
+
+h4{
+  font-size: .8em;
+  text-transform: lowercase;
+  letter-spacing: 0px;
+  border-bottom: 2px solid #CCC;
+  line-height: 1em;
+
+}
+
+
+#left{
+  width: 120px;
+  margin: 10px;
+  float: left;
+}
+#right
+{
+  width: 400px;
+  margin-left: 20px;
+  float: left;
+}
+
+#palette
+{
+  max-width: 150px;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+.color_box
+{
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  display: inline-block;
+}
+
+.color_box img{
+  width: 40px;
+  height: 40px;
+}
+
+
+.clear{
+  clear: both;
+}
+
+.paint{
+  width: 5px;
+  height: 5px;
+  margin: 0px;
+  float: left;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+#album
+{
+  width: 150px;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+#canvas{
+  width: 400px;
+}
