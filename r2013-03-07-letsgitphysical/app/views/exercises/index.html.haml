@@ -1,0 +1,17 @@
+%h1= 'All exercises for ' + @auth.email
+
+#new_exercise
+
+
+.row
+  .large-4.columns
+    .float
+      = link_to('New', new_exercise_path, :id => 'new_exercise',:remote => true, :class => 'button radius tiny alert')
+    .float
+      = button_tag 'chart', :class => 'button radius tiny alert', :id => 'show_chart'
+    .float
+      = select_tag 'activities', options_for_select(@activities.map{ |a| [a,a]})
+
+
+#chart{:style => "height: 250px;"}
+%ol#exercises
