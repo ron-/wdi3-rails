@@ -8,7 +8,8 @@
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  subscriber_id   :integer
+#  userable_id     :integer
+#  userable_type   :string(255)
 #
 
 class User < ActiveRecord::Base
