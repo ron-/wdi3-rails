@@ -1,0 +1,14 @@
+class SessionController < ApplicationController
+
+  def new
+  end
+  def create
+    user = User.where(:email => params[:email]).first
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+    else
+      session[:user_id] = nil
+    end
+  end
+
+end
