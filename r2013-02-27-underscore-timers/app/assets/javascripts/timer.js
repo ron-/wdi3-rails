@@ -18,7 +18,7 @@ var timer = null;
 
 function start_timer()
 {
-  timer = setInterval(generate_random_number, 200);
+  timer = setInterval(generate_random_number, 1000);
 }
 
 function stop_timer()
@@ -28,7 +28,7 @@ function stop_timer()
 
 function generate_random_number()
 {
-  var number = _.random(0, 1000);
+  var number = _.random(0, 100);
   numbers.push(number);
   newbox = $('<div>').addClass('numbox');
   newbox.text(number);

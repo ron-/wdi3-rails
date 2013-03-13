@@ -1,0 +1,6 @@
+- @users.each do |user|
+  %tr
+    %td= user.name
+    %td.textright= number_to_currency(user.balance)
+    %td.textright= number_to_currency(user.current_position)
+    %td.textright= number_to_currency(user.current_total)

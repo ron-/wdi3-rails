@@ -1,6 +1,6 @@
 R20130307Letsgitphysical::Application.routes.draw do
   root :to => 'home#index'
-  resources :users, :only => [:index, :new, :create]
+  resources :users, :only => [:index, :new, :create, update]
 
   resources :exercises, :only => [:index, :new, :create] do
     collection do
