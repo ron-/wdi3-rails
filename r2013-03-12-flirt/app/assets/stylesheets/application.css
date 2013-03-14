@@ -1,4 +1,6 @@
 /*
  *= require_self
+ *= require 'foundation/css/foundation.min.css'
+ *= require 'foundation/css/normalize.css'
  *= require 'flirt.scss'
  */

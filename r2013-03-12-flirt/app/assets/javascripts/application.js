@@ -1,5 +1,5 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require 'flirt'
+//= require 'foundation/js/foundation.min.js'

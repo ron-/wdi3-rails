@@ -29,12 +29,22 @@ describe Administrator do
       expect(administrator.user).to be_an_instance_of(User)
     end
   end
+
   describe '.create' do
+
     it 'has an id' do
-      administrator = Administrator.create
+      administrator = Administrator.create(role: 'db')
       expect(administrator.id).to_not be nil
     end
+
+    it 'role fails validation' do
+      administrator = Administrator.create
+      expect(administrator.id).to be nil
+
+    end
+
   end
+
   describe '#metadata' do
     it 'has administrator properties' do
       administrator = Administrator.create(role: 'db', ssn: '12345678', tel: '212-555-1212')

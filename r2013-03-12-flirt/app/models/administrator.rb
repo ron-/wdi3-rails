@@ -13,5 +13,5 @@
 class Administrator < ActiveRecord::Base
   attr_accessible :role, :ssn, :tel
   has_one :user, :as => :userable
-
+  before_save validates :role, :presence => true
 end
