@@ -1,5 +1,7 @@
 <% if session[:user_id].present? %>
-$('#login_form').empty();
+$('#form').empty();
+$('nav ul.left').append('<%=j render(:partial => 'logout_link') %>')
+$('.right').empty();
 <% else %>
 $('#form').empty().append('<%=j render(:partial => 'form') %>');
 <% end %>

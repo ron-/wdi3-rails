@@ -4,4 +4,6 @@ R20130312Flirt::Application.routes.draw do
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
 end
