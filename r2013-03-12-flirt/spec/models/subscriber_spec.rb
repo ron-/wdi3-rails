@@ -2,24 +2,26 @@
 #
 # Table name: subscribers
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  tagline     :string(255)
-#  bio         :string(255)
-#  preferences :string(255)
-#  bodytype    :string(255)
-#  location    :string(255)
-#  status      :string(255)
-#  ethnicity   :string(255)
-#  gender      :string(255)
-#  age         :integer
-#  occupation  :string(255)
-#  interests   :string(255)
-#  political   :string(255)
-#  religious   :string(255)
-#  education   :string(255)
-#  income      :decimal(, )
+#  id              :integer          not null, primary key
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  tagline         :string(255)
+#  bio             :string(255)
+#  preferences     :string(255)
+#  bodytype        :string(255)
+#  location        :string(255)
+#  status          :string(255)
+#  ethnicity       :string(255)
+#  gender          :string(255)
+#  age             :integer
+#  occupation      :string(255)
+#  interests       :string(255)
+#  political       :string(255)
+#  religious       :string(255)
+#  education       :string(255)
+#  income          :decimal(, )
+#  subscription_id :integer
+#  expires         :date
 #
 
 require 'spec_helper'
@@ -52,6 +54,35 @@ describe Subscriber do
       expect(subscriber.id).to be nil
     end
   end
+
+  describe '#expires' do
+    it 'has an expiration date'do
+      subscriber = Subscriber.create(tagline: 'hey', bio: 'my bio...', preferences: 'a,b,c', bodytype: 'd', location: 'ny', status: 'single', ethnicity: 'human', gender: 'female', age: '29', occupation: 'rails developer', interests: 'a,b,c', political: 'independent', religious: 'i <3 God', education: 'GA', income: '1_000_000' )
+      subscriber.expires = Date.current
+      subscriber.save
+      expect(subscriber.expires).to eq Date.current
+    end
+  end
+
+  describe '#has_subscription?' do
+
+    it 'subscriber has a subcription' do
+      subscriber = Subscriber.create(tagline: 'hey', bio: 'my bio...', preferences: 'a,b,c', bodytype: 'd', location: 'ny', status: 'single', ethnicity: 'human', gender: 'female', age: '29', occupation: 'rails developer', interests: 'a,b,c', political: 'independent', religious: 'i <3 God', education: 'GA', income: '1_000_000' )
+      subscription = Subscription.create
+      subscriber.subscription = subscription
+      subscriber.save
+      expect(subscriber.has_subscription?).to be_true
+    end
+
+    it 'subscriber does not have a subcription' do
+      subscriber = Subscriber.create(tagline: 'hey', bio: 'my bio...', preferences: 'a,b,c', bodytype: 'd', location: 'ny', status: 'single', ethnicity: 'human', gender: 'female', age: '29', occupation: 'rails developer', interests: 'a,b,c', political: 'independent', religious: 'i <3 God', education: 'GA', income: '1_000_000' )
+      expect(subscriber.has_subscription?).to be_false
+    end
+
+  end
+
+
+
   describe '#metadata' do
     it 'has subscriber properties' do
       subscriber = Subscriber.create(tagline: 'hey', bio: 'my bio...', preferences: 'a,b,c', bodytype: 'd', location: 'ny', status: 'single', ethnicity: 'human', gender: 'female', age: '29', occupation: 'rails developer', interests: 'a,b,c', political: 'independent', religious: 'i <3 God', education: 'GA', income: '1_000_000' )

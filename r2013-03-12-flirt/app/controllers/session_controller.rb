@@ -4,6 +4,7 @@ class SessionController < ApplicationController
   end
 
   def create
+    @subscriptions = Subscription.all
     @auth = User.where(:email => params[:email]).first
     if @auth.present? && @auth.authenticate(params[:password])
       session[:user_id] = @auth.id
@@ -11,11 +12,9 @@ class SessionController < ApplicationController
       session[:user_id] = nil
     end
   end
+
   def destroy
     session[:user_id] = nil
   end
-
-
-
 
 end

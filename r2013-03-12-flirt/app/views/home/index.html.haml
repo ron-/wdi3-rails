@@ -1,4 +1,10 @@
-
-
 #form
+.row
+  .large-10.large-centered.columns
+    #subs
+.row
+  .large-10.large-centered.columns
+    - if @auth
+      - if !@auth.sub.has_subscription?
+        = render :partial => 'home/show_subs'
 

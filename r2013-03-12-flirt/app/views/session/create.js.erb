@@ -2,6 +2,10 @@
 $('#form').empty();
 $('nav ul.left').append('<%=j render(:partial => 'logout_link') %>')
 $('.right').empty();
+  <% if !@auth.sub.has_subscription? %>
+    $('#subs').append('<%=j render :partial => 'home/show_subs' %>')
+  <% end %>
 <% else %>
 $('#form').empty().append('<%=j render(:partial => 'form') %>');
 <% end %>
+
