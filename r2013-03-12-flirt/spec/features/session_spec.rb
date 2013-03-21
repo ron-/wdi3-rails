@@ -38,6 +38,9 @@ describe 'Session' do
     end
 
     it 'logs the user off the system', :js => true do
+      add_subscriptions
+      subscriber = Subscriber.create(tagline: 'enter', bio: 'vvv',  gender: 'enter', age: 18)
+      subscriber.user = user
       visit root_path
       click_link('Login')
       fill_in('Email', :with => user.email)
@@ -47,9 +50,12 @@ describe 'Session' do
       expect(page.has_link?('bob')).to be false
       page.should have_link('Register')
       page.should have_link('Login')
+      page.should_not have_button('Free')
       visit root_path
       page.should have_link('Register')
       page.should have_link('Login')
+      page.should_not have_button('Basic')
+
     end
 
 
@@ -76,4 +82,11 @@ describe 'Session' do
     end
   end
 
+end
+
+
+def add_subscriptions
+  ['Free', 'Basic'].each do |name|
+    Subscription.create(plan: name)
+  end
 end

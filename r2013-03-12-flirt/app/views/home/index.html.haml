@@ -4,7 +4,6 @@
     #subs
 .row
   .large-10.large-centered.columns
-    - if @auth
-      - if !@auth.sub.has_subscription?
-        = render :partial => 'home/show_subs'
+    - if @auth && !@auth.sub.has_subscription?
+      = render :partial => 'home/show_subs'
 

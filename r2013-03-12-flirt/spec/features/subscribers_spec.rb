@@ -16,6 +16,18 @@ describe 'Subscribers' do
       page.should have_button('Free')
       page.should have_button('Basic')
     end
+    it 'the subscriber with subscription will not see a list of subscriptions', :js => true do
+      add_subscriptions
+      login_to_system_as_subscriber_with_a_subscription
+      page.should_not have_button('Free')
+      page.should_not have_button('Basic')
+    end
+    it 'the admins wont see buttons', :js => true do
+      add_subscriptions
+      login_to_system_as_admin
+      page.should_not have_button('Free')
+      page.should_not have_button('Basic')
+    end
   end
 
   describe 'GET /subscribers/new' do
@@ -85,6 +97,32 @@ def login_to_system_as_subscriber_with_no_subscription
   fill_in('Password', :with => 'a')
   click_button('Start Flirting')
 end
+
+def login_to_system_as_subscriber_with_a_subscription
+  user = User.create(email: 'bob@gmail.com', username: 'bob', password: 'a', password_confirmation: 'a')
+  subscriber = Subscriber.create(tagline: 'enter', bio: 'vvv',  gender: 'enter', age: 18)
+  subscriber.user = user
+  subscription = Subscription.create
+  subscriber.subscription = subscription
+  subscriber.save
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => 'a')
+  click_button('Start Flirting')
+end
+
+def login_to_system_as_admin
+  user = User.create(email: 'bob@gmail.com', username: 'bob', password: 'a', password_confirmation: 'a')
+  admin = Administrator.create(tagline: 'enter', bio: 'vvv',  gender: 'enter', age: 18)
+  admin.user = user
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => 'a')
+  click_button('Start Flirting')
+end
+
 
 def add_subscriptions
   ['Free', 'Basic'].each do |name|
